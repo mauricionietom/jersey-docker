@@ -16,7 +16,7 @@ public class Patient {
     
     private String Nombre;
     private String Direccion;
-      private int telefono;
+    private int telefono;
     private String  publico;
     
     
