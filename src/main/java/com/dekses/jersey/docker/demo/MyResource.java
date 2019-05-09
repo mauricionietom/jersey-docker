@@ -23,19 +23,25 @@ public class MyResource {
     
     
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getIt() {
+    @Produces(MediaType.APPLICATION_JSON)
+    public Patient getIt() {
         System.out.println("GET");
-        return "Got it!";
+        return new Patient("A", "B", 0, "dasdfasdf");
     }
     
     @POST
-    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    @Produces({ MediaType.APPLICATION_JSON})
     public Patient addEmployee(Patient emp) {   
+        
         System.out.println("POST");
         MongoDB db = new MongoDB();
         System.out.print(emp.getNombre());
-        db.AddPatient(emp.getNombre(),emp.getDireccion(), emp.getTelefono(), emp.getPublico());
+        db.AddPatient("Jaun","8", 123, "Publico");
+        
         return new Patient();
     }
+    
+    
+    
+    
 }
